@@ -1,5 +1,6 @@
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,12 +16,12 @@ import Profile from "./pages/profile/Profile";
 import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContex";
-
+import { AuthContext } from "./context/authContext";
 
 function App() {
-  const currentUser=true;
 
 
+  const {currentUser} = useContext(AuthContext);
   const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {

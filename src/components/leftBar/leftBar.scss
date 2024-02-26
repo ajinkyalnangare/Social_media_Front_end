@@ -1,6 +1,4 @@
 @import "../../style.scss";
-    //@include add all properites of theme to nav bar and change according to theme name and which property you want to change just add theme
-
 
 .leftBar {
   @include themify($themes) {
@@ -12,10 +10,13 @@
     background-color: themed("bg");
     color: themed("textColor");
 
+    @include mobile{
+      display: none;
+    }
 
-  &::-webkit-scrollbar{
-    display: none;
-  }
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .container {
       padding: 20px;
@@ -24,7 +25,7 @@
         margin: 20px 0px;
         border: none;
         height: 0.5px;
-        background-color:themed("border");
+        background-color: themed("border");
       }
 
       .menu {
